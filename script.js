@@ -61,16 +61,16 @@ document.addEventListener('DOMContentLoaded', function() {
   function setState() {
     Object.keys(values).forEach(function(key) {
       var element = values[key][state[key]];
-      state[key] && (element.checked = true) && setOption(element);
+      state[key] && (element.checked = true) && setLegend(element);
     });
 
     Object.keys(texts).forEach(function(key) {
       var element = texts[key];
       key += '-sonst';
-      state[key] && (element.value = state[key]) && setText(element);
+      state[key] && (element.value = state[key]);
     });
 
-    state.aufsicht && (aufsicht.value = state.aufsicht) && setText(aufsicht);
+    state.aufsicht && (aufsicht.value = state.aufsicht);
   }
 
   function setOption(element) {
@@ -81,14 +81,25 @@ document.addEventListener('DOMContentLoaded', function() {
     state[set] = element.value;
     element.checked = true;
 
+    setLegend(element);
+    setWarum2(element);
+    updateHash();
+  }
+
+  function setLegend(element) {
+    var set = element.name;
+    var legend = element.dataset.legend;
     if (legends[set]) {
       legends[set].textContent = legend;
-      if (warum2) {
-        setOption(values.warum2[warum2]);
-      }
     }
+  }
 
-    updateHash();
+  function setWarum2(element) {
+    var set = element.name;
+    var warum2 = element.dataset.warum2;
+    if (warum2) {
+      setOption(values.warum2[warum2]);
+    }
   }
 
   function setText(element) {
