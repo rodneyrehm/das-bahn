@@ -66,6 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     Object.keys(texts).forEach(function(key) {
       var element = texts[key];
+      key += '-sonst';
       state[key] && (element.value = state[key]) && setText(element);
     });
     
