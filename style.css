@@ -114,6 +114,9 @@ label {
 }
 #aufsicht input {
   display: block;
+
+  font-family: 'Nothing You Could Do', cursive;
+  font-size: 25px;
 }
 
 /*
