@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   
   main.addEventListener('click', function(event) {
-    var element = event.srcElement;
+    var element = event.target;
     if (!element[matches]('input[type="radio"]')) {
       return;
     }
@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }, true);
   
   main.addEventListener('focus', function(event) {
-    var element = event.srcElement;
+    var element = event.target;
     if (!element[matches]('input[type="text"]')) {
       return;
     }
@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }, true);
   
   main.addEventListener('keyup', function(event) {
-    var element = event.srcElement;
+    var element = event.target;
     if (!element[matches]('input[type="text"]')) {
       return;
     }
