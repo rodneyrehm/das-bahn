@@ -127,6 +127,10 @@ document.addEventListener('DOMContentLoaded', function() {
       return;
     }
     setOption(element);
+
+    if (element.value === "sonst") {
+      element.parentElement.querySelector('input[type="text"]').focus();
+    }
   }, true);
   
   main.addEventListener('focus', function(event) {
