@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="utf-8" />
+	<title>Das Bahn</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!--
+  based off the image by El Comandante
+-->
+
+<header>
+  <img src="img/logo-db-bahn.png">
+  <h1>Entschuldigungszettel</h1>
+</header>
+<main>
+    <h2><span id="wer-legend">Liebe/r/s</span></h2>
+    <fieldset id="wer">
+      <ul>
+        <li><label><input type="radio" name="wer" data-legend="Lieber" value="Chef"> Chef</label></li>
+        <li><label><input type="radio" name="wer" data-legend="Lieber" value="Lehrer"> Lehrer</label></li>
+        <li><label><input type="radio" name="wer" data-legend="Lieber" value="Hauptfeld"> Hauptfeld</label></li>
+        <li><label><input type="radio" name="wer" data-legend="Liebe" value="Mami"> Mami</label></li>
+        <li><label><input type="radio" name="wer" data-legend="Lieber" value="Zahnarzt"> Zahnarzt</label></li>
+        <li><label><input type="radio" name="wer" data-legend="Liebes" value="Zuckerwattewölkchen"> Zuckerwattewölkchen</label></li>
+        <li><label><input type="radio" name="wer" data-legend="Lieber" value="JVA - Beamter"> JVA - Beamter</label></li>
+        <li><label><input type="radio" name="wer" data-legend="Liebe" value="Tante Hilde"> Tante Hilde</label></li>
+        <li><label><input type="radio" name="wer" data-legend="Lieber" value="Herr Stromberg"> Herr Stromberg</label></li>
+        <li><label><input type="radio" name="wer" data-legend="Liebe/r/s" value="sonst"> <input type="text" name="wer-sonst"></label></li>
+      </ul>
+    </fieldset>
+    
+    <h2>Leider konnte ich heute nicht pünktlich <span id="was-legend">zum/zur</span></h2>
+    <fieldset id="was">
+      <ul>
+        <li><label><input type="radio" name="was" data-legend="zum" value="Termin"> Termin</label></li>
+        <li><label><input type="radio" name="was" data-legend="zum" value="Meeting"> Meeting</label></li>
+        <li><label><input type="radio" name="was" data-legend="zum" value="Dienst"> Dienst</label></li>
+        <li><label><input type="radio" name="was" data-legend="zum" value="Unterricht"> Unterricht</label></li>
+        <li><label><input type="radio" name="was" data-legend="zur" value="Trauung"> Trauung</label></li>
+        <li><label><input type="radio" name="was" data-legend="zum" value="Kriegsbeginn"> Kriegsbeginn</label></li>
+        <li><label><input type="radio" name="was" data-legend="zum" value="Kaffeekränzchen"> Kaffeekränzchen</label></li>
+        <li><label><input type="radio" name="was" data-legend="zur" value="Hinrichtung"> Hinrichtung</label></li>
+        <li><label><input type="radio" name="was" data-legend="zum" value="Poppen"> Poppen</label></li>
+        <li><label><input type="radio" name="was" data-legend="zum/zur" value="sonst"> <input type="text" name="was-sonst"></label></li>
+    </fieldset>
+    
+    <h2>erscheinen, weil <span id="warum-legend">die Bahn</span></h2>
+    <fieldset id="warum">
+      <ul>
+        <li><label><input type="radio" name="warum" data-legend="die Bahn" data-warum2="hatte" value="Verzögerung"> Verzögerungen im Betriebsablauf</label></li>
+        <li><label><input type="radio" name="warum" data-legend="die Bahn einen" data-warum2="hatte" value="Notarzt"> Notarzteinsatz am Bahnsteig</label></li>
+        <li><label><input type="radio" name="warum" data-legend="die Bahn von" data-warum2="überrascht" value="Wintereinbruch"> Wintereinbruch im Dezember</label></li>
+        <li><label><input type="radio" name="warum" data-legend="die Bahn von" data-warum2="überrascht" value="Laubfall"> Laubfall im Herbst</label></li>
+        <li><label><input type="radio" name="warum" data-legend="der" data-warum2="hatte" value="Lokführer"> Lokführer seine Pause</label></li>
+        <li><label><input type="radio" name="warum" data-legend="die Bahn" data-warum2="ist" value="Immer"> sowieso immer Schuld</label></li>
+        <li><label><input type="radio" name="warum" data-legend="die Bahn" data-warum2="überrascht" value="Tiere"> Tieren auf den Gleisen</label></li>
+        <li><label><input type="radio" name="warum" data-legend="die Bahn" data-warum2="überrascht" value="Bäume"> Bäume auf den Gleisen</label></li>
+        <li><label><input type="radio" name="warum" data-legend="zum/zur" data-warum2="" value="sonst"> <input type="text" name="warum-sonst"></label></li>
+      </ul>
+      <ul id="warum2">
+        <li><label><input type="radio" name="warum2" value="hatte"> hatte</label></li>
+        <li><label><input type="radio" name="warum2" value="ist"> ist</label></li>
+        <li><label><input type="radio" name="warum2" value="überrascht"> überrascht wurde</label></li>
+      </ul>
+    </fieldset>
+    
+</main>
+
+<footer>
+  <label id="aufsicht"><input type="text" name="aufsicht"> Örtliche Aufsicht / Zugbegleiter</label>
+  <div id="siegel">Dienstsiegel</div>
+  <p id="hinweis">Hinweis: Zutreffendes ankreuzen.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

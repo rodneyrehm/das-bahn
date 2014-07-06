@@ -1,0 +1,143 @@
+/*
+ * Text auf bahn.de ist Arial
+ */
+* {
+  font-family: Arial;
+}
+
+
+/*
+ * Inhalt in in der Breite begrenzen und zentrieren
+ */
+body {
+  max-width: 500px;
+  margin: 20px auto;
+  font-size: 14px;
+}
+
+/*
+ * Rahmen um Kopf-, Inhalt- und Fuß-Blöcke anzeigen
+ */
+body > header,
+body > footer,
+main {
+  border: 2px solid #333;
+  padding: 20px;
+}
+main {
+  border-top: none;
+  border-bottom: none;
+}
+
+/*
+ * Überschriften formatieren
+ */
+h1 {
+  vertical-align: bottom;
+  display: inline-block;
+  margin: 0 0 0 20px;
+  padding: 0;
+  font-size: 28px;
+}
+h2 {
+  font-size: 16px;
+}
+
+/*
+ * Textfelder als gepunktete Linie anzeigen
+ */
+input[type="text"] {
+  border: none;
+  border-bottom: 2px dotted #333;
+  font-size: 16px;
+}
+
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Die Optionen der Aussagen in Zwei Spalten anzeigen
+ * siehe: https://developer.mozilla.org/en-US/docs/Web/CSS/column-count
+ */
+fieldset > ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  -webkit-column-count: 2;
+     -moz-column-count: 2;
+          column-count: 2;
+}
+
+/*
+ * Zeilenumbrüche bei <label> Inhalt kompensieren,
+ * sodass Text auf einer vertikalen Linie beginnt
+ */
+label {
+  display: block;
+  padding-left: 22px;
+  text-indent: -22px;
+}
+
+/*
+ * Die Optionen beim Abschluss der Warum-Aussage
+ * In Reihe erscheinen lassen
+ * siehe: https://developer.mozilla.org/en-US/docs/CSS/Using_CSS_flexible_boxes
+ */
+#warum2 {
+  -webkit-column-count: auto;
+     -moz-column-count: auto;
+          column-count: auto;
+  
+  display: flex;
+  justify-content: center
+}
+#warum2 > li + li {
+  margin-left: 20px;
+}
+
+/*
+ * TODO: beschreibung
+ */
+#aufsicht {
+  display: inline-block;
+  font-size: 12px;
+  color: #333;
+  
+  margin-top: 20px;
+  padding-left: 0;
+}
+#aufsicht input {
+  display: block;
+}
+
+/*
+ * Das Wort "Dienstsiegel" mit einem Kreis als Rahmen anzeigen
+ */
+#siegel {
+  float: right;
+  
+  width: 100px;
+  height: 100px;
+  
+  font-size: 12px;
+  color: #333;
+  text-align: center;
+  line-height: 100px;
+  vertical-align: middle;
+
+  border: 1px solid #333;
+  border-radius: 50%;
+}
+
+/*
+ * TODO: beschreibung
+ */
+#hinweis {
+  font-size: 12px;
+  color: #333;
+  clear: both;
+}
