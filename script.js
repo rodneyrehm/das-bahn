@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
   'use strict';
-  
+
   // https://developer.mozilla.org/en-US/docs/Web/API/Element.matches
   // http://caniuse.com/matchesselector
   var matches = (function(node) {
@@ -12,19 +12,19 @@ document.addEventListener('DOMContentLoaded', function() {
         return true;
       }
     });
-    
+
     return methodName;
   })(document.body);
-  
+
   function valueMap(elements) {
     var map = {};
     [].forEach.call(elements, function(element) {
       map[element.value] = element;
     });
-    
+
     return map;
   }
-  
+
   var state = {
     wer: null,
     was: null,
@@ -42,55 +42,55 @@ document.addEventListener('DOMContentLoaded', function() {
     warum: valueMap(document.querySelectorAll('[name="warum"]')),
     warum2: valueMap(document.querySelectorAll('[name="warum2"]'))
   };
-  
+
   var legends = {
     wer: document.getElementById('wer-legend'),
     was: document.getElementById('was-legend'),
     warum: document.getElementById('warum-legend')
   };
-  
+
   var texts = {
     wer: document.querySelector('[name="wer-sonst"]'),
     was: document.querySelector('[name="was-sonst"]'),
     warum: document.querySelector('[name="warum-sonst"]')
   };
-  
+
   var main = document.getElementsByTagName('main')[0];
   var aufsicht = document.querySelector('[name="aufsicht"]');
-  
+
   function setState() {
     Object.keys(values).forEach(function(key) {
       var element = values[key][state[key]];
       state[key] && (element.checked = true) && setOption(element);
     });
-    
+
     Object.keys(texts).forEach(function(key) {
       var element = texts[key];
       key += '-sonst';
       state[key] && (element.value = state[key]) && setText(element);
     });
-    
+
     state.aufsicht && (aufsicht.value = state.aufsicht) && setText(aufsicht);
   }
-  
+
   function setOption(element) {
     var set = element.name;
     var legend = element.dataset.legend;
     var warum2 = element.dataset.warum2;
-    
+
     state[set] = element.value;
     element.checked = true;
-        
+
     if (legends[set]) {
       legends[set].textContent = legend;
       if (warum2) {
         setOption(values.warum2[warum2]);
       }
     }
-    
+
     updateHash();
   }
-  
+
   function setText(element) {
     var set = element.name;
     state[set] = element.value;
@@ -110,17 +110,17 @@ document.addEventListener('DOMContentLoaded', function() {
         _hash.push(encodeURIComponent(key) + '=' + encodeURIComponent(state[key]));
       }
     });
-    
+
     location.hash = _hash.join('&');
   }
-  
+
   function importHash() {
     location.hash.substring(1).split('&').forEach(function(val) {
       var value = val.split('=');
       state[decodeURIComponent(value[0])] = decodeURIComponent(value[1]);
     });
   }
-  
+
   main.addEventListener('click', function(event) {
     var element = event.target;
     if (!element[matches]('input[type="radio"]')) {
@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', function() {
       element.parentElement.querySelector('input[type="text"]').focus();
     }
   }, true);
-  
+
   main.addEventListener('focus', function(event) {
     var element = event.target;
     if (!element[matches]('input[type="text"]')) {
@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     setOption(element.parentElement.firstElementChild);
   }, true);
-  
+
   main.addEventListener('keyup', function(event) {
     var element = event.target;
     if (!element[matches]('input[type="text"]')) {

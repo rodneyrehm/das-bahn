@@ -91,10 +91,10 @@ label {
   -webkit-column-count: auto;
      -moz-column-count: auto;
           column-count: auto;
-  
+
   display: flex;
   justify-content: center;
-  
+
   margin-top: 20px;
 }
 #warum2 > li + li {
@@ -108,7 +108,7 @@ label {
   display: inline-block;
   font-size: 12px;
   color: #333;
-  
+
   margin-top: 20px;
   padding-left: 0;
 }
@@ -121,10 +121,10 @@ label {
  */
 #siegel {
   float: right;
-  
+
   width: 100px;
   height: 100px;
-  
+
   font-size: 12px;
   color: #333;
   text-align: center;
